@@ -1,0 +1,6 @@
+node_modules/
+venv/
+.env**
+.idea
+*__pycache__*
+token_data.json
