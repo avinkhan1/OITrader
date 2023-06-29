@@ -15,3 +15,12 @@ def sending_OI_alert_to_discord(alert_content):
     except Exception as error:
         logger.error("Exception returned when sending a message to discord from alt OI monitoring service:", error)
         return {'message': "Failed to contact backend service"}
+
+
+def sending_BTC_funding_alert_to_discord(alert_content):
+    try:
+        webhook = SyncWebhook.partial(os.environ.get("BTC_FUNDING_DISCORD_ID"), os.environ.get('BTC_FUNDING_DISCORD_KEY'))
+        webhook.send(alert_content)
+    except Exception as error:
+        logger.error("Exception returned when sending a message to discord from alt OI monitoring service:", error)
+        return {'message': "Failed to contact backend service"}
