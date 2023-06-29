@@ -1,5 +1,6 @@
 import time
 import schedule
+from datetime import datetime
 
 from src.OI_monitors.btc_funding_monitor import alert_on_btc_funding_rate_change
 
@@ -20,6 +21,7 @@ schedule.every().hour.at(":57").do(run_alert_on_btc_funding_change)
 
 
 try:
+    print(f"BTC funding monitor starting at {datetime.now()}")
     while True:
         schedule.run_pending()
         time.sleep(1)

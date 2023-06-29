@@ -5,3 +5,4 @@ venv/
 *__pycache__*
 token_data.json
 btc_funding_data.json
+nohup.out
